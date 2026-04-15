@@ -20,8 +20,11 @@ const Gallery = () => {
     if (error) return <div style={{ color: 'red', textAlign: 'center' }}>{error}</div>;
 
     return (
-        <div>
-            <h2>User Gallery</h2>
+        <div style={{ animation: 'fadeIn 0.5s ease' }}>
+            <div style={{ marginBottom: '40px', textAlign: 'center' }}>
+                <h2 style={{ fontSize: '2.5rem', fontWeight: 800, margin: 0, letterSpacing: '-0.04em' }}>Explore Inventory</h2>
+                <p style={{ color: 'var(--text-muted)', fontSize: '1.1rem', marginTop: '8px' }}>Browse and discover assets stored in our central warehouse</p>
+            </div>
             <InventoryGallery 
                 items={items} 
                 loading={loading} 

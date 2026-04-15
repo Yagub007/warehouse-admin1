@@ -21,8 +21,11 @@ const Favorites = () => {
     }, [favorites]); // Оновлюємо список, якщо favorites змінилися
 
     return (
-        <div>
-            <h2>My Favorites ❤️</h2>
+        <div style={{ animation: 'fadeIn 0.5s ease' }}>
+            <div style={{ marginBottom: '40px', textAlign: 'center' }}>
+                <h2 style={{ fontSize: '2.5rem', fontWeight: 800, margin: 0, letterSpacing: '-0.04em' }}>Your Favorites ❤️</h2>
+                <p style={{ color: 'var(--text-muted)', fontSize: '1.1rem', marginTop: '8px' }}>Keep track of the assets that matter most to you</p>
+            </div>
             <InventoryGallery 
                 items={items} 
                 loading={loading} 

@@ -10,11 +10,27 @@ const AdminInventory = () => {
     if (error) return <div>Error: {error}</div>;
 
     return (
-        <div>
-            <h2>Warehouse Inventory</h2>
-            <Link to="/inventory/create"><button>Add New Item</button></Link>
-            <hr />
-            <InventoryTable items={inventory} refreshList={fetchInventory} />
+        <div style={{ animation: 'fadeIn 0.5s ease' }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '32px' }}>
+                <div>
+                    <h2 style={{ fontSize: '2rem', fontWeight: 800, margin: 0, letterSpacing: '-0.025em' }}>Inventory Dashboard</h2>
+                    <p style={{ color: 'var(--text-muted)', margin: '4px 0 0 0' }}>Manage and monitor your warehouse assets</p>
+                </div>
+                <Link to="/inventory/create">
+                    <button className="btn-primary" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                        <span>+</span> Add New Item
+                    </button>
+                </Link>
+            </div>
+            <div style={{ 
+                background: 'white', 
+                borderRadius: '24px', 
+                padding: '8px', 
+                boxShadow: 'var(--shadow-md)',
+                overflow: 'hidden'
+            }}>
+                <InventoryTable items={inventory} refreshList={fetchInventory} />
+            </div>
         </div>
     );
 };
